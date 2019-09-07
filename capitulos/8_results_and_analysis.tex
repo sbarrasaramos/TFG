@@ -24,11 +24,7 @@ The first and main reason for this is the presence of \textit{background flows}.
 
 \section{Background flow}
 
-We call \textit{background flow} to currents whose origin is unrelated to the presence of the algae. An example of this flow is shown on Fig. \ref{backg_flow}.
-
-If the background flow were uniform, we could think of simply removing its mean numerically, but it is not the case as one can see from the figure above. 
-
-This led us to two possibilities: either developing more complex data processing or trying to improve our experiment. 
+Fig. \label{backg_flow} shows a projection of the darkest points of a series of frames (over $5.5$ seconds). This allows us to see the particle and algae paths. The particle paths in Fig. \label{backg_flow} show a \textit{mean} behavior that is neither Brownian neither related to the algae kicks.
 
 \begin{figure}[H]
 	\centering
@@ -36,6 +32,12 @@ This led us to two possibilities: either developing more complex data processing
 	\caption{The common trend of the streamlines (over 5.5 seconds) in the left part of the image suggests the presence of a background flow. It reflects a velocity magnitude of the order of $6 \mu m / s$}
 	\label{backg_flow}
 \end{figure}
+
+We call \textit{background flow} to these currents, whose origin is unrelated to the presence of the algae.
+
+If the background flow were uniform, we could think of simply removing its mean numerically, but it is not the case as one can see from the figure above. 
+
+This led us to two possibilities: either developing more complex data processing or trying to improve our experiment. 
 
 \subsection{Experimental removal}
 
@@ -92,9 +94,9 @@ It is true that at the beginning, before using the wet cotton, our films were sh
 
 Acquiring the data from the central $ \sim 1 \; \textrm{mm}^2 $ is not always easy. Firstly, because it is hard to measure, secondly, because we try to find regions with the lowest number of dead algae and with representative concentrations. Nonetheless, we stay as far away as possible from the edges to prevent boundary effects and work with nearly constant thickness.
 
-Besides these pieces of advice, other possibilities were considerated.
+Besides these pieces of advice, other possibilities were contemplated.
 
-\textcolor{red}{¿¿¿ For instance, we also dismissed Marangoni stresses because, as we have already mentioned, are active mostly on the surface, especially when concentrations are very low. ??? FALSO --> MUY EFICAZ COMO ORIGEN DE DESPLAZAMIENTOS}
+For instance, we also considered Marangoni stresses that, acting on the surface, are very effective in generating currents in the bulk. We are not sure whether or not they play a major role, but, if that is the case, very little can be done to mitigate them, since, as we have already mentioned, even the smallest concentrations can have important effects.
 
 This leaves us with the last option: the tilt of the device which is completely unavoidable to a certain extent.
 
@@ -183,7 +185,14 @@ At this point, one might wonder where the difficulty lies when trying to remove 
 
 Each of which is characterized by their own length and time scales. This makes it rather easy to isolate Brownian motion from the other two, because scales are very different, but when it comes to distinguish the algae contribution from the background flow, the separation is vaguer.
 
-This is the reason why finally we decided to remove the background flow by working in a reference frame attached to the alga. The $X$ axis of this frame would be parallel to the alga's velocity vector at all times.
+This is the reason why finally we decided to remove the background flow by working in a reference frame attached to the alga (see Fig. \ref{alga_RF}). The $X$ axis of this frame would be parallel to the alga's velocity vector at all times.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{archivos/algaRF.png}
+	\caption{Schematics of the alga reference frame ($\mathbf{v}_{alga}$ is the velocity of the alga in absence of external flows, and $\mathbf{v}_{bf}$ is the velocity induced by the background flow on the alga)}
+	\label{alga_RF}
+\end{figure}
 
 Since every alga behaves in a different way, this idea had an obvious problem: controlling concentration. Nonetheless, in their paper, Kurtuldu et al.~\cite{Kurtuldu2011}, explain and demonstrate experimentally that, for low levels of concentration, where one can ignore the interactions between algae (i.e. in the dilute limit), considering the tracers within a circle (with variable radius) around each alga only is equivalent to modifying concentration.  
 
@@ -222,7 +231,7 @@ Hereafter we present the pseudocode corresponding to this algorithm:
 		
 		\vspace{0.2 cm}
 		
-		\textbf{Change of reference frame ¿¿¿\footnote{For further information on the classes and methods (\textit{terms in italics}), see \textcolor{red}{¿¿¿ Annex I ???}}???} 
+		\textbf{Change of reference frame} 
 		
 		\vspace{0.2 cm}
 		
@@ -325,7 +334,7 @@ $\Phi = 0.674$ :
 	\label{prob_dist_e3}
 \end{figure}
 
-If background flow and algae motion were uniform, we would expect to find a $\Delta x$ distribution centered on this value (with a negative sign). In fact, reality is more complex than that and both the background flow and the velocities of the algae are subject to distribution. Even if the velocity modulus were always the same in the straight parts of the paths, the behavior of the different individuals is usually defined as a mix between \textit{run-and-tumble} and directed phototaxis~\cite{Polin}. The term \textit{run-and-tumble} describes a motion where straight paths are followed by abrupt changes in the direction of the trajectory. For this changes to occur, the modulus of the velocity goes to zero (or close to it), which partially explains the dispersion of the velocity values.
+If background flow and algae motion were uniform, we would expect to find a $\Delta x$ distribution centered on $-\| \mathbf{v}_{alga} + \mathbf{v}_{bf} \|$. In fact, reality is more complex than that and both the background flow and the velocities of the algae are subject to distribution. Even if the velocity modulus were always the same in the straight parts of the paths, the behavior of the different individuals is usually defined as a mix between \textit{run-and-tumble} and directed phototaxis~\cite{Polin}. The term \textit{run-and-tumble} describes a motion where straight paths are followed by abrupt changes in the direction of the trajectory. For this changes to occur, the modulus of the velocity goes to zero (or close to it), which partially explains the dispersion of the velocity values.
 
 To confirm this hypothesis, one can have a look at the distributions for longer $\Delta t$ (see Fig. \ref{prob_dist_e3_longer}), where the dispersion of the algae displacements must be remarkably higher.
  
