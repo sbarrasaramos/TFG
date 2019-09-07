@@ -45,7 +45,7 @@ Under Eq. \ref{CDM} the orders of the different terms have been specified. One c
 
 Thus, when the Reynolds number is very low, one can neglect the inertial terms, and vice versa. This hierarchization of terms allows drastically simplifying the NS equations, which is very useful given that the Navier–Stokes existence and smoothness problem remains unsolved.
 
-Stokes equations (see Eq. \ref{stokes_f}) constitute the zero Reynolds limit to the NS equations, provided that there is no forcing term or that the forcing term is also negligible ($Sr<<1$). These equations, as opposed to NS, are linear. For a certain geometry and boundary conditions, this grants a certain number of properties to the flow that can be described by them:
+Stokes equations (see Eq. \ref{stokes_f}) constitute the zero Reynolds limit to the NS equations (i.e. Stokes flow), provided that there is no forcing term or that the forcing term is also negligible ($Sr<<1$). These equations, as opposed to NS, are linear. For a certain geometry and boundary conditions, this grants a certain number of properties to the flow that can be described by them:
 
 \begin{itemize}
 	\item Uniqueness of the solution  
@@ -76,7 +76,7 @@ However, if we study this solution, we come across a contradiction if we compare
 
 It turns out that in the far field, the inertial terms cannot be neglected anymore.
 
-What is more, if we now try to find the flow field around an infinite cylinder (or around a circle in 2D), a valid solution does not even exist in the flow field. This is known as the Stokes paradox.
+What is more, if we now try to find the flow field around an infinite cylinder (or around a circle in 2D), a valid solution does not even exist. This is known as the Stokes paradox.
 
 Later, a correct solution for a cylinder was derived using Oseen's equations. 
 
@@ -115,7 +115,7 @@ But then,
 	\textit{Why is surface tension a force parallel to the interface while it is so obvious that it must be perpendicular to it?}
 \end{displayquote}
 
-This question can be found in ??? Snoeijer 2011 ???. Also provided in the aforementioned article is this short answer:
+This question can be found in Marchand et al.~\cite{Marchand}. Also provided in the aforementioned article is this short answer:
 
 \begin{displayquote}
 	\textit{The schematic of Fig. \ref{surface_tension} represents only the attractive intermolecular forces. The real force balance requires both repulsive and attractive interactions between liquid molecules.}
@@ -152,7 +152,7 @@ p_c = -\gamma \nabla \cdot \hat{n} = 2 \gamma H
 \label{young_laplace}
 \end{equation}
 
-$H$ being the mean curvature (average of the principal curvatures):
+$H$ being the mean curvature (average of the principal curvatures) of the free surface:
 
 \begin{equation} 
 2H = \frac{1}{R_1} + \frac{1}{R_2}
@@ -190,12 +190,12 @@ where $A_{cs}$ is the cross-sectional area of the water column.
 
 For such a case, the further addition of liquid does not change the cross section, but only the length of the column. Our geometry, on the contrary, sees its cross area unavoidably dilated because its length is fixed.
 
-This is why we still want to consider another approach: we consider a layer, whose surface is described by the Monge representation. The free energy of the water-air interface is:
+This is why we still want to consider another approach: we consider a layer, whose surface is described by the Monge representation (i.e. $h=f(x,y)$ is $Z$ the position of the surface). The free energy of the water-air interface is\footnote{In this section, $h_q$ is the partial derivative of $h$ with respect to the variable $q$, and $h_{qq}$ is the second partial derivative.}:
 
 \begin{equation}
 F_{s}=\int \int d x d y\left[\gamma \sqrt{1+h_{x}^{2}+h_{y}^{2}}\right]
 \end{equation}
- 
+
 We ignore the energy of the surface between the solid and the wetting phase, assuming that it is negligible since its surface is much smaller. 
 
 To be able to solve it analytically, we are going to consider a circular film instead of a square shaped one. In that case, the orders of magnitude of the aforementioned energies are: 
@@ -248,13 +248,13 @@ where $C$ is a constant.
 We can now simplify the terms in \ref{TermsEL} with the help of \ref{PressureConstraint} and insert them in Eq. \ref{EulerLagrange}, which leads to:
 
 \begin{equation}
-h^{\prime}=\frac{\frac{1}{2}\left(\frac{\lambda}{\gamma}-C\right) r}{\sqrt{1-\frac{1}{4}\left(\frac{\lambda}{\gamma}-C\right)^{2} r^{2}}}
+h_r=\frac{\frac{1}{2}\left(\frac{\lambda}{\gamma}-C\right) r}{\sqrt{1-\frac{1}{4}\left(\frac{\lambda}{\gamma}-C\right)^{2} r^{2}}}
 \end{equation}
 
 In this equation we notice, that, as a consequence of axial symmetry and continuity, the derivative goes to zero when $r$ goes to zero. From now on, we will use the letter $B$ to express the constant $\frac{1}{2}\left(\frac{\lambda}{\gamma}-C\right) R$. Integration of the expression above leads to:
 
 \begin{equation}
-h^{\prime}=\frac{B \frac{r}{R}}{\sqrt{1-B^{2} \left(\frac{r}{R}\right)^2}} \rightarrow h=-\frac{\sqrt{1-B^{2} \left(\frac{r}{R}\right)^2}}{B} R + K
+h_r=\frac{B \frac{r}{R}}{\sqrt{1-B^{2} \left(\frac{r}{R}\right)^2}} \rightarrow h=-\frac{\sqrt{1-B^{2} \left(\frac{r}{R}\right)^2}}{B} R + K
 \end{equation}
 
 where $K$ is a constant.
