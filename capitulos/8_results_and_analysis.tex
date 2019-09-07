@@ -41,6 +41,8 @@ This led us to two possibilities: either developing more complex data processing
 
 \subsection{Experimental removal}
 
+\subsubsection{Possible causes of the background flow}
+
 To remove this flow experimentally, we first need a better understanding of what is going on. Several hypothesis were proposed:
 
 \begin{itemize}
@@ -49,6 +51,8 @@ To remove this flow experimentally, we first need a better understanding of what
 	\item Marangoni stresses
 	\item Tilt of the device
 \end{itemize}
+
+\subsubsection{Expert advice}
 
 Since our setup had already been used by several authors in their articles, one of our first steps was to contact one of them: Dr. Jeffrey S. Guasto. Here are some of the pieces of advice he gave us in answer to our questions and our reactions to them:
 
@@ -74,7 +78,9 @@ By using a Petri dish, we managed to place the film close enough to the top cove
 
 The Petri dish inner diameter is $\phi = 5 \; \textrm{cm}$ and its height is $h = 1.3 \; \textrm{cm}$. This means our volume is $\sim 2$ times theirs, but further diminishing the height of the box does not seem to improve our situation.
 
-Concerning the light source, we work with the minimum intensity of light allowing to obtain clear images of the algae and the tracers. We use as well a red filter to avoid phototaxis. Indeed, longer wavelengths are less energetic and the heating should be less intense. 
+Concerning the light source, we work with the minimum intensity of light allowing to obtain clear images of the algae and the tracers. We use as well a red filter to avoid phototaxis. Indeed, longer wavelengths are less energetic and the heating should be less intense.
+
+Regarding other possible sources of taxis: given the low thickness of the films we will be working with, the effects of aerotaxis and gravitaxis should be negligible. A correct mixing of the suspension should prevent chemotaxis as well. Thermotaxis could constitute a problem, but the use of red light mitigates it. The red filter should also reduce the thermal- and evaporation-induced flows, and thus rheotaxis. To avoid barotaxis and thigmotaxis, the observed area must be far enough from the borders of the domain. 
 
 \begin{itemize}
 	\item \textit{Regarding the fluid (...), we found that the cells were very sensitive to the surfactant concentration, and thus we minimized the concentration to ensure their motility in spite of any benefits to the film mechanics. I think that we found a concentration right around the CMC \footnote{Critical micelle concentration defined as the concentration of surfactants above which micelles are spontaneously formed~\cite{Sheng2011}} for Tween 20 worked best to maintain both the film and the cell motility. To properly control surfactant concentration - if using commercially available tracer particles - it is also critical to wash the tracers and remove the harsh surfactants in which they are packed (again for the sake of the cells).}
@@ -93,6 +99,26 @@ So, at a certain point, we also decided to try and use Tween 20 in some of our e
 It is true that at the beginning, before using the wet cotton, our films were shorter lived, but after that this was not a problem anymore and our layers would endure up to several hours. This allows us to neglect the thickness variation over our experiments (each video lasts around $50-55 \; \textrm{seconds}$.), and suggests that evaporation should not be responsible for the background flows.
 
 Acquiring the data from the central $ \sim 1 \; \textrm{mm}^2 $ is not always easy. Firstly, because it is hard to measure, secondly, because we try to find regions with the lowest number of dead algae and with representative concentrations. Nonetheless, we stay as far away as possible from the edges to prevent boundary effects and work with nearly constant thickness.
+
+To be more precise, if we resume the equations developed in section ¿¿¿3.1.5???, for the values $R = 3 \; \textrm{mm}$, $\rho = 25 \; \mu \textrm{m}$ and $\theta = 70^\textrm{o}$, $h_0 = t/2 = 7.5 \; \mu \textrm{m}$, which are similar to the dimensions of our film, we obtain $B \simeq 6.90 \cdot 10^{-4}$ and a volume of $ \simeq 0.45 \; \mu \textrm{L}$. The shape of the film is shown in the next figures:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{archivos/CircFilmFunction.png}
+	\caption{Half thickness of the film as a function of the radial position.}
+	\label{CircFilmFunction}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{archivos/CircFilmSection.png}
+	\caption{Diagram of a the liquid film next to the thread.}
+	\label{CircFilmSection}
+\end{figure}
+
+Far enough from the boundary conditions we can expect a similar shape for a square shaped film, so indeed we can consider that it is mostly flat.
+
+\subsubsection{Other possible causes}
 
 Besides these pieces of advice, other possibilities were contemplated.
 
@@ -156,7 +182,7 @@ In addition to the temporal evolution of the film thickness, Fig. \ref{thickness
 
 \subsection{Numerical removal}
 
-Background flows can be seen either in the microscope images and in the trajectories resulting of particle tracking. This algorithm outputs the particle and algae positions in every frame. Knowing the frame rate of the imaging, one can build the trajectory as a function of time. An example of tracers and algae trajectories can be seen on Fig. \ref{trajectories_e3}.
+Background flows can be seen either in the microscope images and in the trajectories resulting of particle tracking. This algorithm outputs the particle and algae positions in every frame. Knowing the frame rate of the imaging, one can build the trajectory as a function of time. An example of tracers and algae trajectories can be seen in Fig. \ref{trajectories_e3}.
 
 \begin{figure}[H]
 	\centering
@@ -169,11 +195,15 @@ The presence of a background flow, headed from the left-bottom corner to the rig
 
 Since disposing of background flows experimentally was not easy, we decided to explore the numerical removal in parallel.
 
+\subsubsection{Initial approach: dismissed ideas}
+
 Some initial ideas were put into practice and the dismissed. The main reason for this was that most of them were arbitrary in the sense that they depended on one or more subjective parameters (i.e. parameters that had to be chosen by the user). 
 
 For instance, one of the first ideas was to split the tracers in two groups: those whose motion was affected by the presence of algae and those who were not. Once the classification done, the flow field provided by the non-affected group would be considered as the background flow and could be removed from the trajectories of the rest of the tracers.
 
 Besides the inconvenience of having to choose a parameter whose value would determine if a bead was or not affected by the presence of algae\footnote{For this purpose we had chosen the distance to the closest alga.}, this method needed of a huge amount of tracers for the interpolation of the field to be successful. 
+
+\subsubsection{Motion sources}
 
 At this point, one might wonder where the difficulty lies when trying to remove this background flows. The beads motion is composed of three parts:
 
@@ -184,6 +214,8 @@ At this point, one might wonder where the difficulty lies when trying to remove 
 \end{itemize}
 
 Each of which is characterized by their own length and time scales. This makes it rather easy to isolate Brownian motion from the other two, because scales are very different, but when it comes to distinguish the algae contribution from the background flow, the separation is vaguer.
+
+\subsubsection{Change of reference frame}
 
 This is the reason why finally we decided to remove the background flow by working in a reference frame attached to the alga (see Fig. \ref{alga_RF}). The $X$ axis of this frame would be parallel to the alga's velocity vector at all times.
 
@@ -289,6 +321,8 @@ Hereafter we present the pseudocode corresponding to this algorithm:
 }
 %--------------------------------------------------
 
+\subsubsection{First set of images: pushers}
+
 After a few attempts we obtained a clear set of images (always presenting a background flow), with a sufficient concentration of tracers and algae. This set had the particularity that the algae would behave as pushers, as it can be seen on Fig. \ref{chlamy_pusher}. 
 
 \begin{figure}[H]
@@ -299,6 +333,8 @@ After a few attempts we obtained a clear set of images (always presenting a back
 \end{figure}
 
 This anomalous behaviour, explained in the \textcolor{red}{¿¿¿State of the art???} section, should not affect the shape of the distribution functions we are going to be looking for, but only their scales. We can, therefore, use this images to test our algorithm.
+
+\subsubsection{Image processing}
 
 The images have been processed to improve the performance of the particle tracking algorithm (see Fig. \ref{orbpe3}). The process consists in:
 
@@ -319,6 +355,8 @@ The images have been processed to improve the performance of the particle tracki
 	\item denoising,
 	\item and thresholding
 \end{itemize}
+
+\subsubsection{Application and results}
 
 Fig. \ref{prob_dist_e3} shows the probability distributions of $\Delta x$ and $\Delta y$ (in the relative frame) for a fixed $\Delta t = 0.04 \; \textrm{s}$ and a concentration\footnote{The selected concentrations result of considering circles whose diameters are: \\ 
 	$ \Phi \simeq 0.3\% \rightarrow r_w = 93.03 \; \mu \textrm{m} $ \\
