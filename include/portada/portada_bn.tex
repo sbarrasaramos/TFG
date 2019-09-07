@@ -1,0 +1,69 @@
+\begin{titlepage}
+
+	% Márgenes de esta pagina modificados
+	\newgeometry{ignoreall,top=2cm,ignoreall}
+	
+	% Offset horizontal para toda la portada
+	\setlength{\centeroffset}{-0.5\oddsidemargin}
+	\addtolength{\centeroffset}{0.5\evensidemargin}
+	\thispagestyle{empty}
+	
+	% Titulo y subtitulo
+	\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+	\centering
+	\begin{spacing}{1.5}{\huge\bfseries \titulo}\end{spacing}
+		\noindent\rule[-1ex]{\textwidth}{3pt}\\[3.5ex] % Linea
+		{\large\bfseries \subtitulo\\[4cm]}
+	\end{minipage}
+	
+	% Relleno hasta la zona central
+	\vspace{2.5cm}
+	
+	% Zona central. Autor y Tutores
+	\noindent\hspace*{\centeroffset}
+	\begin{minipage}{\textwidth}
+		\centering
+		
+		\textbf{Author}\\ {\miNombre}\\[2.5ex]
+		\textbf{Tutors}\\
+		{\normalsize \miTutor\\
+		\ifx\departamentoTutor\undefined \else \small\textit \departamentoTutor\\ \fi
+		\ifx\miTutorB\undefined \else \normalsize \miTutorB\\ \fi
+		\ifx\departamentoTutorB\undefined \else\small\textit \departamentoTutorB\\[2cm] \fi
+		}
+	\end{minipage}
+	
+	% Relleno hasta la zona de abajo
+	\vspace*{\fill}
+	
+	% Zona de abajo
+	\noindent\hspace*{\centeroffset}
+	\begin{minipage}{\textwidth}
+		\centering
+		\noindent\hspace*{\centeroffset}
+		\begin{center}
+			{\includegraphics[width=6cm]{\logoGrado}}
+		\end{center}
+		\vspace*{2em}
+		\centering
+		\noindent\hspace*{\centeroffset}
+		\begin{minipage}[l]{4.2cm}
+			\includegraphics[height=1.8cm]{\logoDepartamento}
+		\end{minipage}
+		\begin{minipage}[c]{4.2cm}
+			\includegraphics[height=1.7cm]{\logoUniversidadB}
+		\end{minipage}
+		\begin{minipage}[r]{4.2cm}
+			\includegraphics[height=2.4cm]{\logoUniversidad}
+		\end{minipage}
+		\\[1cm]
+		Paris, \Hoy
+	\end{minipage}
+
+
+\end{titlepage}
+
+% A partir de aquí aplica los márgenes establecidos en configuracioninicial.tex
+\restoregeometry
+
+

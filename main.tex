@@ -1,0 +1,145 @@
+% !TeX document-id = {c6282027-a510-40f1-b05e-2f558a6cd3f1}
+% !TeX program = xelatex
+% !TeX TXS-program:compile = txs:///xelatex/[--shell-escape]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TFM
+% Universidad Politecnica de Madrid (ETSIAE)/ISAE Supaero
+% Author: Sara Barrrasa Ramos
+% Template by: José Manuel Requena Plens & Pablo José Rocamora Zamora
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{include/configuracioninicial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título y subtítulo
+\newcommand{\titulo}{Transport in 2D by Microswimmers}
+\newcommand{\subtitulo}{An experimental approach}
+% Datos del autor
+\newcommand{\miNombre}{Sara Barrasa Ramos}
+\newcommand{\miDNI}{51482291B}
+\newcommand{\miEmail}{s.bramos@alumnos.upm.es}
+% Datos del tutor/es
+\newcommand{\miTutor}{Gabriel Amselem}
+\newcommand{\miTutorB}{Laurent Joly}
+\newcommand{\departamentoTutor}{LadHyX, Ecole Polytechnique}
+\newcommand{\departamentoTutorB}{Départment d’Aérodynamique, Énergetique et Propulsion, ISAE}
+% Datos de la facultada y universidad
+\newcommand{\miFacultad}{ETSIAE UPM}
+\newcommand{\miFacultadCorto}{ISAE}
+\newcommand{\miUniversidad}{\protect{Universidad de Murcia}}
+\newcommand{\miUbicacion}{Paris}
+\newcommand{\firma}{include/firma}
+
+% Configuración automática según el identificador elegido
+% Grados
+\definecolor{informatica}{RGB}{121,11,21}	% Informatica
+% Colores generales
+\definecolor{negro}{RGB}{0,0,0}
+\definecolor{blanco}{RGB}{255,255,255}
+
+% Logotipos comunes de todas las titulaciones
+\newcommand{\logoFacultadPortada}{include/logos-titulaciones/Simbolo-negativo-sin-fondo}
+\newcommand{\logoGradoPortada}{include/logos-titulaciones/Simbolo-negativo-sin-fondo} 
+\newcommand{\logoUniversidadPortada}{include/logos-universidad/escudo_umu}
+\newcommand{\logoUniversidadPortadaB}{include/logos-universidad/tls_front}
+\newcommand{\logoFacultadPortadaBaja}{include/logos-titulaciones/FIUM-postivo-sin-fondo}
+% Logos
+\newcommand{\logoGrado}{include/logos-titulaciones/FI-positivo}
+\newcommand{\logoDepartamento}{include/logos-titulaciones/Logotipo_DIIC}
+\newcommand{\logoUniversidad}{include/logos-universidad/um}
+\newcommand{\logoUniversidadB}{include/logos-universidad/tls}
+% Texto
+\newcommand{\miGrado}{M2 Dynamique des fluides, Énergétique et Transferts}
+\newcommand{\miGradoB}{Diplôme Ingénieur ISAE}
+\newcommand{\miGradoC}{Máster Universitario en Ingeniería Aeronáutica}
+\newcommand{\tipotrabajo}{Master's Final Project}
+% Color
+\newcommand{\colorgrado}{informatica}
+\newcommand{\colortexto}{blanco}
+
+% Información añadida a las propiedades del archivo PDF.
+\hypersetup{
+	pdfauthor = {\miNombre~(\miEmail)},
+	pdftitle = {\titulo},
+}
+
+%%
+% Archivo de acrónimos
+%%
+\makeglossaries % Genera la base de datos de acrónimos
+\input{anexos/_acronimos.tex} % Archivo que contiene los acrónimos
+
+%%%%%%%%%%%%%%%%%%%%%%%% 
+% INICIO DEL DOCUMENTO
+% A partir de aquí debes empezar a realizar tu TFG/TFM
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	
+	% Números romanos hasta el mainmatter.
+	\frontmatter
+	
+	% PORTADA
+	\input{include/portada/portada_color} % Portada Color
+	\input{include/portada/portada_bn} % Portada B/N
+	
+	%%%%% PREAMBULO
+	% Incluye el .tex que contiene el preámbulo, agradecimientos y dedicatorias.
+	%\setstretch{1.5} % 1.5 línea de interlineado antes esta a 1 para la portada
+	\input{preambulos/preliminaresconagradecimientos}
+	\input{preambulos/1_declaracion_originalidad}
+	\input{preambulos/2_resumen}
+	
+	%\setstretch{1.0} % 1.0 línea de interlineado para los indices
+	% Incluye después del archivo anterior el indice y lista de figuras, tablas y códigos.
+
+	\tableofcontents     	% Índice
+	\listoffigures	     	% Índice de figuras
+	\listoftables	     	% Índice de tablas
+	\lstlistoflistings 	    % Índice de códigos
+	
+	% Inicia la numeración habitual.
+	\mainmatter
+	
+	%\setstretch{1.5} % 1.5 línea de interlineado
+	
+	%%%%
+	% CONTENIDO. CAPÍTULOS DEL TRABAJO - Añade o elimina según tus necesidades
+	%%%%
+	\input{capitulos/1_introduction}	
+	\input{capitulos/2_objectives}
+	\input{capitulos/3_active_suspensions}
+	\input{capitulos/4_fluid_mechanics}
+	\input{capitulos/5_brownian_motion}
+	\input{capitulos/6_state_of_the_art}
+	\input{capitulos/7_materials_and_methods}
+	\input{capitulos/8_results_and_analysis}
+	\input{capitulos/9_conclusions}
+	
+	%\includepdf[pages={57-97}]{archivos/plantilla-tfg-fium.pdf}
+
+	
+	%%%%
+	% CONTENIDO. BIBLIOGRAFÍA.
+	%%%%
+	\nocite{*} %incluye TODOS los documentos de la base de datos bibliográfica sean o no citados en el texto
+	\bibliographystyle{unsrtnat}
+	\bibliography{bibliography/bibliography} % Archivo que contiene la bibliografía
+	
+	
+	%%%%
+	% CONTENIDO. LISTA DE ACRÓNIMOS. Comenta las líneas si no lo deseas incluir.
+	%%%%
+	% Incluye el listado de acrónimos utilizados en el trabajo. 
+	\printglossary[style=modsuper,type=\acronymtype,title={List of Acronyms}]
+	% Añade el resto de acrónimos si así se desea. Si no elimina el comando siguiente
+	\glsaddallunused
+	
+	%%%%
+	% CONTENIDO. Anexos - Añade o elimina según tus necesidades
+	%%%%
+	\appendix % Inicio de los apéndices
+	\input{anexos/_anexo_I}
+	%\input{anexos/_anexo_2}
+	%\input{anexos/_anexo_3}
+	
+\end{document}
