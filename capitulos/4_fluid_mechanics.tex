@@ -5,11 +5,13 @@
 % Contacto: info@jmrplens.com / Telegram:@jmrplens
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theoretical framework}
+\label{theory}
 
-\section{Fluid Mechanics: specificities}
+\section{Fluid mechanics: specificities}
 \label{fluid_mechanics}
 
 \subsection{Low Reynolds flow}
+\label{low_reynolds}
 
 The Reynolds number is a dimensionless number widely used in fluid mechanics.
 
@@ -57,6 +59,7 @@ Stokes equations (see Eq. \ref{stokes_f}) constitute the zero Reynolds limit to 
 The last of these properties allows us to describe the flow by means of the superposition of different fundamental solutions such as the Stokeslet or the Stresslet, as explained on previous sections.
 
 \subsection{2-Dimensional flow}
+\label{2dflow}
 
 When trying to find out the velocity field around a sphere of radius $a$ under uniform flow, $U_\infty$, in the low Reynolds world, we obtain the following axisymmetric solution in spheric coordinates:
 
@@ -74,7 +77,6 @@ where $\psi$ is the stream function.
 
 However, if we study this solution, we come across a contradiction if we compare the advective and viscous terms:
 
-
 It turns out that in the far field, the inertial terms cannot be neglected anymore.
 
 What is more, if we now try to find the flow field around an infinite cylinder (or around a circle in 2D), a valid solution does not even exist. This is known as the Stokes paradox.
@@ -84,14 +86,15 @@ Later, a correct solution for a cylinder was derived using Oseen's equations.
 It should be however noted that, as a consequence of this paradox, perturbations (i.e.:presence of obstacles,...) are longer ranged in 2D than in 3D. Hence our present study. 
 
 \subsection{Films}
+\label{films}
 
 In their article, Sonin et al.~\cite{SONIN1994} consider a 1mm diameter film, consisting of a flat part which is liked to the surrounding wire by a meniscus-shaped contour. The diameter of this flat part is fixed by the value of a pressure $P_i$ that corresponds the air pressure in a reservoir linked to the film. Since we want our measurements to be taken in 2D films, in this section we will try to understand what determines the extent of the flat part, if it exists, in the absence of such a reservoir.
 
-\subsection{Definitions}
+\subsubsection{Definitions}
 
 In order to make the following section a bit more understandable for engineers or scientists with little or no background in this field, we will start by explaining some fundamental concepts.
 
-\subsubsection{Surface tension}
+\paragraph{Surface tension:}
 
 The \textbf{surface tension} or \textbf{surface energy} is, from a thermodynamic point of view, the energy needed to increase a liquid's interface by unit area. Fluid mechanics provides us with another description: as a force per unit length, tangent to the surface, that keeps it together.
 
@@ -135,7 +138,7 @@ where $V_m$ is the molar volume, $T_c$ is the critical temperature of the liquid
 
 The resulting value for water at $25^\textrm{o} \textrm{C}$ is $7.17 \cdot 10^{-2} \; \textrm{N/m}$.
 
-\subsubsection{Capillary pressure}
+\paragraph{Capillary pressure:}
 
 The \textbf{capillary pressure} between two immiscible fluids is defined as:
 
@@ -160,7 +163,7 @@ $H$ being the mean curvature (average of the principal curvatures) of the free s
 \label{curvature}
 \end{equation}
 
-\subsection{Shape of the interface: energetic considerations}
+\subsubsection{Shape of the interface: energetic considerations}
 
 Looking through the literature we found some descriptions of the real shape of the liquid-air interface in contact with a solid wall. 
 
@@ -292,6 +295,7 @@ Since $\|B\|$ has to be smaller than one for it to have a solution, this equatio
 \end{equation}
 
 \subsection{Surfactants}
+\label{surfactants}
 
 A surfactant is a chemical substance that, when used as a solute, reduces the surface tension of the colloid. Hence, they are also called surface-active agents.
  
@@ -302,8 +306,9 @@ These substances reduce the surface tension of their solvent by acting like an i
 Surfactants may also form aggregates, normally spherical, called micelles. In this assemblies of molecules, the hydrophilic parts form the outer layer of the sphere while the hydrophobic groups point inwards avoiding direct contact with the solvent.
 
 \subsection{Flowing films}
+\label{flowing_films}
 
-As we will see later, in the ¿¿¿Results and Analysis??? section, flows unrelated to algae motion (what we call \textit{background flows}) have been an important issue in this research.
+As we will see later, in Section \ref{results_analysis}, flows unrelated to algae motion (what we call \textit{background flows}) have been an important issue in this research.
 
 To understand them, we looked for bibliography on several topics, among which, flowing films (see Fig. \ref{flowing_film}).
 

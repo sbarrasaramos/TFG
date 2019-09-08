@@ -2,6 +2,7 @@
 \label{materias_methods}
 
 \section{Device}
+\label{mm_device}
 
 Based on some previous works (see, for instance, Sokolov et al.~\cite{Sokolov2007}), and taking into account the microscope dimensions, we designed the baseline of the device as shown in Fig. \ref{device_baseline}. It consists of two quadrilateral frames, the outer being fixed, the inner with a sliding degree of freedom in the Y axis. Each of the frames has two nylon threads attached to it in a way that the relative motion of the frames allows the control of the area enclosed by the threads.
 
@@ -29,7 +30,7 @@ However, the second of this requirements was harder to foresee, and, knowing tha
 
 where $t$ represents the thickness of both frames.
 
-For the threads we used a $50 \; \mu \textrm{m}$ diameter fishing line (see Fig. \ref{fishing_line}) that we glued to the frames . The frames were laser-cut from a $6 \; \textrm{mm}$ thick ??? sheet.
+For the threads we used a $50 \; \mu \textrm{m}$ diameter fishing line (see Fig. \ref{fishing_line}) that we glued to the frames . The frames were laser-cut from a $6 \; \textrm{mm}$ thick sheet.
 
 \begin{figure}[H]
 	\centering
@@ -61,6 +62,7 @@ Previous experiences, such as those of Guasto et al.~\cite{Guasto}, revealed tha
 The reduced microscope working distance obliges to place the film very close to one of the dish walls. So close that the initial droplet would touch it, precluding the possibility of closing the box before setting up the film.
 
 \section{Microscopy}
+\label{mm_microscope}
 
 A Nikon® Eclipse Ti-U inverted microscope with a Nikon® MRP46402 objective (LWD 40x/0.55 Ph1 ADL ∞/1.2 WD 2.1) objective was used in this research together with a Photron® FASTCAM SA3 high speed camera.
 
@@ -68,9 +70,10 @@ This camera provides a 1024 x 1024 pixel resolution at frame rates well above th
 
 To prevent phototaxis, the illumination power must be reduced as much as possible. Moreover, the use of a red filter (Newport® FSQ-RG610 Colored Glass Longpass Filter: 50.8 x 50.8 $\textrm{mm}$, $610 \; \textrm{nm}$ cut-on optical filter) cuts the short wavelengths from the spectrum, to which \textit{Chlamydomonas reinhardtii} is most sensitive.
 
-This also helps to prevent heating, and thus, evaporation and air thermal convection within the petri dish.
+This also helps to prevent heating, and thus, thermotaxis, evaporation and air thermal convection within the petri dish.
 
 \section{Thickness measurement}
+\label{mm_thickness}
 
 In order to estimate the volume of the droplet needed to obtain a $15  \; \mu \textrm{m}$ thick layer, we start by considering a uniform thickness (i.e. a $6 \; \textrm{mm} \times 6  \; \textrm{mm} \times 15 \; \mu \textrm{m}$ square cuboid). This leads to a volume of $0.5 \; \mu \textrm{L}$.
 
@@ -128,6 +131,7 @@ L_w \simeq L_g\frac{n_w}{n_g}
 In conclusion, in our microscope, for a 60x magnification, $112$ graduations are equivalent to $138 \; \mu \textrm{m}$ in water.
 
 \section{Cell culture}
+\label{mm_culture}
 
 For our purposes we have chosen an axenic broth culture of wild-type \textit{Chlamydomonas reinhardtii}, incubated at $21^\textrm{o} \textrm{C}$ under a 12 h bright/dark light cycle to optimize motility and cell size uniformity.
 
@@ -137,9 +141,10 @@ The selected maintenance medium is Tris-acetate-phosphate (Gibco™ TAP Growth M
 
 Subcultures are performed regularly under the same conditions: every 7 days, we take $1 \textrm{mL}$ of the previous broth and add it to $24 \textrm{mL}$ of TAP, for a total volume of $25 \textrm{mL}$.
 
-Higher concentrations are achieved through centrifugation and resuspension.
+Higher concentrations of algae are achieved through centrifugation and resuspension\footnote{At least one hour is needed for resuspension and for the algae to resume their normal activity.} of the solution.
 
 \section{Tracers}
+\label{mm_tracers}
 
 Following the procedures of both Kurtuldu et al.~\cite{Kurtuldu2011} and Guasto et al.~\cite{Guasto}, a part of the cell culture is mixed with $1 \; \mu \textrm{m}$ diameter fluorescent red polystyrene microspheres (ThermoFisher Scientific, ref.: R0100). 
 
@@ -162,6 +167,7 @@ Let us then approximate the Stokes number of the microspheres to be aware of the
 as $\rho_p = 1.05 \; \textrm{g/cm}^\textrm{3}$, $d_p = l_c = 1 \; \mu \textrm{m}$, and we consider the worst-case scenarios regarding the temperature: $\mu_g(30^\textrm{o} \textrm{C}) = 7.98 \cdot 10^{-4} \; \textrm{kg/(m} \cdot \textrm{s)}$; and the speed, estimating that the tip-of-flagella\footnote{The length of the flagella is $l_f \simeq 10 \; \mu \textrm m $} velocity in a semicircular-like motion at $ f \simeq 60 \; \textrm{Hz}$ is, at most, of $ 2 \pi l_f f = 3600 \; \mu \textrm{m/s}$. This obviously constitutes an over-estimation of the Stokes number, whose value is still under 0.1, allowing us to state that the microspheres behave as tracers with high precision.
 
 \section{Surfactants}
+\label{mm_surfactants}
 
 Two different types of surfactants have been used (separately) over this research: Sodium dodecyl sulfate\footnote{Cell membranes are sensible to this type of surfactant, so it can only be used in experiments without algae} (Roche®: SDS 11667289001 - CAS Number 151-21-3) and Polysorbate 20 (Sigma Aldrich: Tween® 20 P9416 - CAS Number 9005-64-5, MDL number MFCD00165986).
  
@@ -186,6 +192,7 @@ Polysorbate 20 is a synthetic nonionic surfactant. The number 20 corresponds to 
 Trace amounts of this substances lower the surface tension, helping the setup and improving the durability of the film. In the beginning we used SDS in low concentrations (always lower than its CMC, $8.2 \; \textrm{mM}$ at $25^\textrm{o} \textrm{C}$) in some films. Later, based on the paper of Kurtuldu et al.~\cite{Kurtuldu2011}, we used Tween 20, $0.03\%$ v~∕~v in some of our experiments.
 
 \section{Staining}
+\label{mm_staining}
 
 In some experiments, if the initial thickness of the film was too high, and therefore, the evaporation time, very long, the algae would eventually stop moving before reaching the desired thickness, hampering the production of meaningful images/data.
 

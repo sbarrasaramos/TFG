@@ -21,12 +21,13 @@ In the beginning of the 20th century, Einstein and Smoluchowski separately produ
 A few years later, the verification of Einstein's model by Jean Perrin would finally demonstrate the atomic nature of matter.
 
 \subsection{From Brownian motion to diffusion}
+\label{brownian_diff}
 
 If in a given medium, the random motion of its particles has no preferred direction, then as time passes, the particles will tend to be spread evenly throughout it.
 
 This process can also be interpreted as a subtance spreding from regions of high concentration to regions of lower concentration, and it is called diffusion. Hence, diffusion can be considered an emergent manifestation on a macrospic level of particles subject to Brownian motion on the microscopic level.
 
-Einsten developed a model based on probability theory that shows that the density of Brownian particles $\rho$ at a point $x$ at time t satisfies the diffusion equation: ???
+Einsten developed a model based on probability theory that shows that the density of Brownian particles $\rho$ at a point $x$ at time t satisfies the diffusion equation:
 
 \begin{equation}
 \frac{\partial \rho}{\partial t}=D \frac{\partial^{2} \rho}{\partial x^{2}}
@@ -36,13 +37,13 @@ The solution to this equation, assuming a boundary condition were all particles 
 
 Given $\mu=0$, it is possible to conclude that  meaning that a Brownian particle is equally likely to move in any sense and direction.
 
-The second moment\footnote{The $n^{th}$ moment of a real-valued continuous function f(x) of a real variable is defined as:  $\mu_{n}=\int_{-\infty}^{\infty} x^{n} f(x) \mathrm{d} x$} of the distrubution is:
+The second moment\footnote{The $n^{th}$ moment of a real-valued continuous function f(x) of a real variable is defined as:  $\mu_{n}=\int_{-\infty}^{\infty} x^{n} f(x) \mathrm{d} x$} of the distrubution, known as mean square displacement (MSD), is:
 
 \begin{equation}
 \overline{x^{2}}=2 D t
 \end{equation}
 
-This allowed Einstein to show that the displacement of a Brownian particle is not proportional to the elapsed time, but rather to its square root.
+This allowed Einstein to show that the displacement of a Brownian particle is not proportional to the elapsed time, but rather to its square root. 
 
 In a state of dynamic equilibrium, established between concentration driven migration and other present forces, the particle density distribution combined with Fick's Law leads to:
 
@@ -59,6 +60,7 @@ q=\frac{1}{6 \pi \mu r}
 Thus, a smaller particle, a less viscous fluid, and a higher temperature would each increase the diffusion coefficient and, therefore, the mean square displacement (MSD). 
 
 \subsection{Influence of microswimmers}
+\label{brownian_microswimmers}
 
 In active suspensions, besides the molecular bombardment, the MSD of Brownian particles can be further enlarged through interactions with the active particles. This interaction can be due to either direct contact or simply to their influence on the flow field.
 
