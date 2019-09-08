@@ -7,7 +7,12 @@ For the sake of clarity, this section is going to be presented in a mostly chron
 
 Luckily, once the device was built and with an almost constant supply of cells (contamination issues aside), experiments are quite fast and we have been able to run close to $100$ of them.
 
-We want to quickly recall the aim of our experiments and the protocol followed in each of them. Regarding the aim, we intend to study the influence of \textit{Chlamydomonas reinhardtii} on the diffusion of micrometric tracers in a 2-dimensional environment. Concerning the protocol, we first prepare an aliquot of the algae in their medium (higher levels of concentration are achieved by centrifugation). Then, we add the tracers and, if required, the surfactant. Some wet cotton is to be put in the box if we want to prevent evaporation. We \textit{close} the device (approaching its threads) and, with the help of a pipette, we put a droplet of the desired volume between the threads, touching them. With the help of the device, we pull the threads $6 \; \textrm{mm}$ away, so as to have a thin square film, and we cover the box. Finally we turn the box upside down and we put it under the microscope, where we will wait for it to reach the expected thickness. Then we acquire images for approximately 1 minute. One of the resulting images can be seen on Fig. \ref{frame_e3}
+We want to quickly recall the aim of our experiments and the protocol followed in each of them:
+
+\begin{itemize}
+	\item Regarding the aim, we intend to study the influence of \textit{Chlamydomonas reinhardtii} on the diffusion of micrometric tracers in a 2-dimensional environment. 
+	\item Concerning the protocol, we first prepare an aliquot of the algae in their medium (higher levels of concentration are achieved by centrifugation). Then, we add the tracers and, if required, the surfactant. Some wet cotton is to be put in the box if we want to prevent evaporation. We reduce the size of the square to its minumum by turning the screw and, with the help of a pipette, we put a droplet of the desired volume between the threads, touching them. With the help of the device, we pull the threads $6 \; \textrm{mm}$ away, so as to have a thin square film, and we cover the box. Finally we turn the box upside down and we put it under the microscope, where we will wait for it to reach the expected thickness. Then we acquire images for approximately 1 minute. One of the resulting images can be seen on Fig. \ref{frame_e3}.
+\end{itemize}
 
 \begin{figure}[H]
 	\centering
@@ -18,25 +23,24 @@ We want to quickly recall the aim of our experiments and the protocol followed i
 
 As it has been explained in Section \ref{brownian_diff}, diffusion can be quantified by measuring the MSD of tracers as a function of the elapsed time. This is why, in our images, we will look for the displacements, $\Delta x$ and $\Delta y$, of the tracers along the axes of the selected reference frame (usually the laboratory reference frame) for different elapsed times, $\Delta t$.
 
-Among our experiments, most were devoted to assess the diffusion of tracers in the presence of \textit{Chlamydomonas reinhardtii}. However, a non-negligible amount of them had other purposes such as evaluating the effects of evaporation, surfactants, tilt,... This already reduces the number of available data, but much more importantly, we have not been able of exploiting most of the images satisfactorily.
+Even if, among our experiments, most were devoted to assess the diffusion of tracers in the presence of \textit{Chlamydomonas reinhardtii}, a non-negligible amount of them had other purposes such as evaluating the effects of evaporation, surfactants, tilt of the device,... This already reduces the number of available data, but much more importantly, we have not been able of exploiting most of the images satisfactorily.
 
-The first and main reason for this is the presence of \textit{background flows}. Afterwards, as a consequence of the implemented solutions further problems arose such as the premature death of algae or the presence of quiescent beads on the surfaces of our film.
+The presence of this effects mostly affects our analysis through the apparition of \textit{background flows}, which we explain in the following section. 
 
 \section{Background flow}
 
-Fig. \label{backg_flow} shows a projection of the darkest points of a series of frames (over $5.5$ seconds). This allows us to see the particle and algae paths.
-The particle paths in Fig. \label{backg_flow} show a \textit{mean} behavior that is neither Brownian nor related to the algae kicks.
+Fig. \ref{backg_flow} shows a projection of the darkest points of a series of frames (over $5.5$ seconds). This allows us to see the particle and algae paths. The particle paths in Fig. \ref{backg_flow} show a \textit{mean} behavior that is neither Brownian nor related to the algae kicks.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.65\textwidth]{archivos/backg_flow.png}
-	\caption{The common trend of the streamlines (over 5.5 seconds) in the left part of the image suggests the presence of a background flow. It reflects a velocity magnitude of the order of $6 \mu m / s$}
+	\caption{The common trend of the streamlines (over 5.5 seconds) in the left part of the image suggests the presence of a background flow. It reflects a velocity magnitude of the order of $6 \mu m / s$ (thick paths correspond to algae, and thin paths, to particles).}
 	\label{backg_flow}
 \end{figure}
 
-We call \textit{background flow} to these currents, whose origin is unrelated to the presence of the algae.
+As we have already mentioned in Section \ref{flowing_films}, e call \textit{background flow} to these currents, whose origin is unrelated to the presence of the algae.
 
-If the background flow were uniform, we could think of simply removing its mean numerically, but it is not the case as one can see from the figure above. 
+If the background flow were uniform, we could think of simply substracting its global mean numerically, but it is not the case as one can see from the figure above. 
 
 This led us to two possibilities: either developing more complex data processing algorithms or trying to improve our experiment setup. 
 
@@ -84,7 +88,7 @@ Concerning the light source, we work with the minimum intensity of light allowin
 Regarding other possible sources of taxis: given the low thickness of the films we will be working with, the effects of aerotaxis and gravitaxis should be negligible. A correct mixing of the suspension should prevent chemotaxis as well. Thermotaxis could constitute a problem, but the use of red light mitigates it. The red filter should also reduce the thermal- and evaporation-induced flows, and thus rheotaxis. To avoid barotaxis and thigmotaxis, the observed area must be far enough from the borders of the domain. 
 
 \begin{itemize}
-	\item \textit{Regarding the fluid (...), we found that the cells were very sensitive to the surfactant concentration, and thus we minimized the concentration to ensure their motility in spite of any benefits to the film mechanics. I think that we found a concentration right around the CMC \footnote{Critical micelle concentration defined as the concentration of surfactants above which micelles are spontaneously formed~\cite{Sheng2011}} for Tween 20 worked best to maintain both the film and the cell motility. To properly control surfactant concentration - if using commercially available tracer particles - it is also critical to wash the tracers and remove the harsh surfactants in which they are packed (again for the sake of the cells).}
+	\item \textit{Regarding the fluid ..., we found that the cells were very sensitive to the surfactant concentration, and thus we minimized the concentration to ensure their motility in spite of any benefits to the film mechanics. I think that we found a concentration right around the CMC \footnote{Critical micelle concentration defined as the concentration of surfactants above which micelles are spontaneously formed~\cite{Sheng2011}} for Tween 20 worked best to maintain both the film and the cell motility. To properly control surfactant concentration - if using commercially available tracer particles - it is also critical to wash the tracers and remove the harsh surfactants in which they are packed (again for the sake of the cells).}
 \end{itemize}
 
 For the first tests without algae but with beads, we used SDS to help maintain the film, but shortly after we noticed that there was no need for it, since our layers were relatively easily formed and remained there long enough.
@@ -94,7 +98,7 @@ Based on Guasto's advice, we started washing the tracers, and even the algae, ri
 So, at a certain point, we also decided to try and use Tween 20 in some of our experiments to reproduce Guasto's experiment as accurately as possible, since he did not find such problems. This does not seem to work though.
 
 \begin{itemize}
-	\item \textit{Regarding the (...) film: The films are relatively short lived and are constant thinning (there is no way to prevent this - some experiments increase the fluid viscosity to slow thinning, but this has obvious issues with swimmers). Our approach was to pull the film to a fixed size ($ \sim 5 \; \textrm{mm}$ square if I recall) and wait for it to thin to our desired thickness ($ \sim 10-15 \; \mu \textrm{m} $). Once it reached the required thickness, we would acquire data for about $1-3 \; \textrm{minutes}$ while the film remained in this thickness range. The film is also not of uniform thickness and all of our data was acquired in the central $ \sim 1 \; \textrm{mm}^2 $.}
+	\item \textit{Regarding the ... film: The films are relatively short lived and are constant thinning (there is no way to prevent this - some experiments increase the fluid viscosity to slow thinning, but this has obvious issues with swimmers). Our approach was to pull the film to a fixed size ($ \sim 5 \; \textrm{mm}$ square if I recall) and wait for it to thin to our desired thickness ($ \sim 10-15 \; \mu \textrm{m} $). Once it reached the required thickness, we would acquire data for about $1-3 \; \textrm{minutes}$ while the film remained in this thickness range. The film is also not of uniform thickness and all of our data was acquired in the central $ \sim 1 \; \textrm{mm}^2 $.}
 \end{itemize}
 
 It is true that at the beginning, before using the wet cotton, our films were shorter lived, but after that this was not a problem anymore and our layers would endure up to several hours. This allows us to neglect the thickness variation over our experiments (each video lasts around $50-55 \; \textrm{seconds}$.), and suggests that evaporation should not be responsible for the background flows.
@@ -123,7 +127,7 @@ Far enough from the boundary conditions we can expect a similar shape for a squa
 
 Besides these pieces of advice, other possibilities were contemplated.
 
-For instance, we also considered Marangoni stresses that, acting on the surface, are very effective in generating currents in the bulk. We are not sure whether or not they play a major role, but, if that is the case, very little can be done to mitigate them, since, as we have already mentioned, even the smallest concentrations can have important effects.
+For instance, we also considered Marangoni stresses that, acting on the surface, are very effective in generating currents in the bulk. We are not sure whether or not they play a major role, but, if that is the case, very little can be done to mitigate them, since, as we have already mentioned, even the smallest concentrations of surfactants can have important effects.
 
 This leaves us with the last option: the tilt of the device which is completely unavoidable to a certain extent.
 
@@ -275,12 +279,12 @@ Hereafter we present the pseudocode corresponding to this algorithm:
 		\hrule
 		\vspace{0.4 cm}
 		
-		\textbf{Initialisation:} reading of the trajectories data (algae and tracers) and writing them on two dataframes belonging to two separate TrajectorySequence objects
+		\textbf{Initialisation:} reading of the trajectories data (algae and tracers)
 		
 		\vspace{0.2 cm}
 		
 		\textbf{Removal of the algae's Brownian motion and noise:}
-		application of a \textit{derivative\_filter} to the algae trajectories
+		application of a filter to remove the Brownian motion from the algae trajectories
 		
 		\vspace{0.2 cm}
 		
@@ -288,7 +292,7 @@ Hereafter we present the pseudocode corresponding to this algorithm:
 		
 		\vspace{0.2 cm}
 		
-		\quad \textbf{Preparing parallelization:} splitting of the dataframe containing the tracer's 
+		\quad \textbf{Preparing parallelization:} partitioning the data
 		
 		\quad trajectories
 		
@@ -316,11 +320,7 @@ Hereafter we present the pseudocode corresponding to this algorithm:
 		
 		\vspace{0.2 cm}
 		
-		\quad \textbf{Saving the data} to a .csv file
-		
-		\vspace{0.2 cm}
-		
-		\textbf{Merging .csv files}
+		\quad \textbf{Saving the data} 
 		
 	\end{minipage}
 }
@@ -345,8 +345,8 @@ The images have been processed to improve the performance of the particle tracki
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{archivos/frame_01_e3.png}
-	\includegraphics[width=0.4\textwidth]{archivos/frame_01_e3_bp.png}
+	\includegraphics[height=0.49\textwidth]{archivos/frame_01_e3.png}
+	\includegraphics[height=0.491\textwidth]{archivos/frame_01_e3_bp.png}
 	\caption{Original (left) and processed (right) frames.}
 	\label{orbpe3}
 \end{figure}
@@ -355,7 +355,7 @@ The images have been processed to improve the performance of the particle tracki
 	\item finding a mean image (over approximately 2700 frames), which is very similar to the background,
 	\item removing this background of all the frames,
 	\item applying a bandpass filter to highlight the structures, whose size is in the searched range,
-	\item equalizing the set of images,
+	\item equalizing\footnote{Histogram equalization of a set of images is a method that allows to adjust the intensities of each image to make them similar between them.} the set of images\footnote{If intensity varies from image to image the intensity threshold used by the tracking algorithm may not be effective},
 	\item improving contrast locally,
 	\item denoising,
 	\item and thresholding
@@ -466,7 +466,7 @@ As a conclusion, our numerical approach for removing the \textit{background flow
 
 \section{Long-lasting films}
 
-To summarize last section: we will set thicker films and wait for them to thin thanks to evaporation.
+To summarize last section: we set thicker films and wait for them to thin thanks to evaporation. As a consequence, further problems arise, that we explain hereafter.
 
 Just after having decided to do so, the device got damaged and we had to build a provisional one. Since we were less concerned about being precise in the initial thickness, the new device lacked of mechanisms: the threads, already in their final (stretched) position, are immersed in the solution and a film is formed between them when the device is removed vertically.
 
